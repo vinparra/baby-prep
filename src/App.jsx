@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { db } from "./firebase";
+import { doc, onSnapshot, setDoc } from "firebase/firestore";
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
@@ -213,37 +215,49 @@ const MEALS = [
   { name: "Banana oat muffins", time: "10 min prep", servings: "12 muffins", ingredients: ["3 ripe bananas, mashed", "2 cups rolled oats", "2 eggs", "¼ cup honey or maple syrup", "1 tsp vanilla", "1 tsp baking powder", "½ tsp cinnamon", "Pinch of salt", "Optional: chocolate chips, walnuts, or blueberries"], tip: "No flour needed. Great for a quick breakfast in the early newborn weeks. Freeze and microwave for 45 seconds." },
 ];
 
-const STORAGE_KEY = "baby_prep_v3";
-
 const DEFAULT_TODOS = [
   { id: 1, text: "Notify each of our employers about the pregnancy", done: false },
   { id: 2, text: "Decide on when to take leave", done: false },
   { id: 3, text: "Look into company resources for new parents", done: false },
 ];
 
-function loadState() {
-  try {
-    const s = localStorage.getItem(STORAGE_KEY);
-    const parsed = s ? JSON.parse(s) : {};
-    if (!parsed.todos) parsed.todos = DEFAULT_TODOS;
-    return parsed;
-  } catch { return { todos: DEFAULT_TODOS }; }
-}
-
-function saveState(s) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch { /* storage unavailable */ }
-}
+const DOC_REF = () => doc(db, "babyprep", "shared");
 
 // ─── MAIN APP ────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [state, setState] = useState(loadState);
+  const [state, setState] = useState({ todos: DEFAULT_TODOS });
   const [activeTab, setActiveTab] = useState("checklist");
+  const [loaded, setLoaded] = useState(false);
 
-  function updateState(patch) {
+  // Listen for real-time changes from Firebase
+  useEffect(() => {
+    const unsub = onSnapshot(DOC_REF(), (snap) => {
+      if (snap.exists()) {
+        const data = snap.data();
+        if (!data.todos) data.todos = DEFAULT_TODOS;
+        setState(data);
+      } else {
+        // First time — write defaults to Firebase
+        setDoc(DOC_REF(), { todos: DEFAULT_TODOS });
+      }
+      setLoaded(true);
+    });
+    return () => unsub();
+  }, []);
+
+  async function updateState(patch) {
     const next = { ...state, ...patch };
     setState(next);
-    saveState(next);
+    await setDoc(DOC_REF(), next);
+  }
+
+  if (!loaded) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "system-ui, sans-serif", color: "#aaa" }}>
+        Loading...
+      </div>
+    );
   }
 
   const tabs = [
