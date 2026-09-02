@@ -55,8 +55,9 @@ const SEED_TASKS = [
     { id: "cl1", name: "Enroll in childbirth or Lamaze class — fills up quickly", timing: "T2", tip: "Your hospital likely offers classes. Also check Lamaze.org and local doulas.", label: null, order: 0 },
     { id: "cl2", name: "Take a breastfeeding class or consult a lactation consultant", timing: "T2", tip: "Many insurance plans cover lactation consultant visits.", label: null, order: 1 },
     { id: "cl3", name: "Take an infant CPR and first aid class", timing: "T2", tip: "Bring your partner.", label: null, order: 2 },
-    { id: "cl4", name: "Watch Maven classes — newborn care 101", timing: "T3", tip: "Maven offers virtual classes on newborn care, feeding, and sleep.", label: "both", order: 3 },
-    { id: "cl5", name: "Take a newborn care class — bathing, swaddling, diapering", timing: "T3", tip: "Even 2 hours of practice makes the first week dramatically calmer.", label: null, order: 4 },
+    { id: "cl4", name: "Schedule delivery prep class", timing: "T3", tip: "Covers what to expect during labor, delivery, and the immediate postpartum period.", label: null, order: 3 },
+    { id: "cl5", name: "Watch Maven classes — newborn care 101", timing: "T3", tip: "Maven offers virtual classes on newborn care, feeding, and sleep.", label: "both", order: 4 },
+    { id: "cl6", name: "Take a newborn care class — bathing, swaddling, diapering", timing: "T3", tip: "Even 2 hours of practice makes the first week dramatically calmer.", label: null, order: 5 },
   ]},
   { section: "Go bag & hospital prep", icon: "🎒", items: [
     { id: "g1", name: "Start researching what to pack in your hospital bag", timing: "T2", tip: "Pack separately for mom, partner, and baby.", label: null, order: 0 },
@@ -190,6 +191,8 @@ const SEED_ITEMS = [
   { id: "hs4", category: "Health & Safety", name: "Kids First Aid Kit 75-piece", priority: "Nice-to-Have", price: 29, notes: "TSA approved, latex-free, fits diaper bag.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "ag1", category: "Activity & Gear", name: "LITTLE Bot Ofie Play Mat (Country Road, Large 6.5x4.5ft)", priority: "Must-Have", price: 166, notes: "Reversible foam floor mat, durable and non-toxic.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "ag2", category: "Activity & Gear", name: "Wooden baby playpen / indoor play yard (73x63\")", priority: "Consider Waiting", price: 170, notes: "Montessori style. Buy closer to when baby is mobile.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ow1", category: "Health & Safety", name: "Owlet Smart Sock baby monitor", priority: "Nice-to-Have", price: 299, notes: "Tracks baby's oxygen level and heart rate while sleeping. Alerts you to readings outside normal ranges. Not a medical device but gives many parents peace of mind.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "oi1", category: "Self-Care & Wellness", name: "Baby-safe oils (coconut, chamomile, or baby massage oil)", priority: "Nice-to-Have", price: 20, notes: "Used for baby massage, dry skin, and cradle cap. Look for fragrance-free, cold-pressed options. Always do a patch test first.", fromRegistry: false, boughtBy: "", purchased: false },
 ];
 
 const BUDGET_PRE = [
@@ -236,13 +239,21 @@ const MEALS = [
 
 const DEFAULT_TODOS = [
   { id: 1, text: "Notify each of our employers about the pregnancy", done: false },
-  { id: 2, text: "Decide on when to take leave", done: false },
-  { id: 3, text: "Look into company resources for new parents", done: false },
+  { id: 2, text: "Decide on when to take leave", done: true },
+  { id: 3, text: "Look into company resources for new parents", done: true },
   { id: 4, text: "Plan for announcements", done: false },
   { id: 5, text: "Choose a name", done: false },
   { id: 6, text: "Look into financial advisor", done: false },
   { id: 7, text: "Buy 2026 wine", done: false },
   { id: 8, text: "Subscribe to Amazon Prime", done: true },
+  { id: 9, text: "Remove no-pest strips from nursery", done: true },
+  { id: 10, text: "Tell parents", done: true },
+  { id: 11, text: "Decide on baby shower", done: true },
+  { id: 12, text: "Buy sleeper sofa", done: false },
+  { id: 13, text: "Open a Trump/investment account for baby", done: false },
+  { id: 14, text: "Buy items for bringing home the baby", done: false },
+  { id: 15, text: "Work — review utilization, bonus timing, and leave impact", done: false },
+  { id: 16, text: "Add money to 529 account", done: false },
 ];
 
 const DOC_REF = () => doc(db, "babyprep", "shared");
