@@ -195,29 +195,7 @@ const SEED_ITEMS = [
   { id: "oi1", category: "Self-Care & Wellness", name: "Baby-safe oils (coconut, chamomile, or baby massage oil)", priority: "Nice-to-Have", price: 20, notes: "Used for baby massage, dry skin, and cradle cap. Look for fragrance-free, cold-pressed options. Always do a patch test first.", fromRegistry: false, boughtBy: "", purchased: false },
 ];
 
-const BUDGET_PRE = [
-  { category: "Nursery & furniture", items: [{ name: "Crib or mini crib", estimate: 220 }, { name: "Crib mattress + protectors", estimate: 120 }, { name: "Crib fitted sheets (3–4)", estimate: 30 }, { name: "Bassinet (bedside)", estimate: 300 }, { name: "Bassinet sheets", estimate: 28 }, { name: "Dresser / changing station", estimate: 350 }, { name: "Changing pad or table", estimate: 130 }, { name: "Glider or recliner", estimate: 450 }, { name: "Sleeper sofa", estimate: 800 }, { name: "Area rug + rug pad", estimate: 360 }, { name: "Baby monitor", estimate: 180 }, { name: "Storage bins / organizers", estimate: 35 }] },
-  { category: "Travel & gear", items: [{ name: "Infant car seat", estimate: 350 }, { name: "Stroller", estimate: 380 }, { name: "Car seat winter cover", estimate: 50 }, { name: "Baby carrier / wrap (newborn)", estimate: 70 }, { name: "Pack n Play", estimate: 89 }] },
-  { category: "Feeding", items: [{ name: "Breast pump (check insurance first)", estimate: 0 }, { name: "Nursing pillow", estimate: 57 }, { name: "Bottles starter set", estimate: 25 }, { name: "Bottle drying rack", estimate: 17 }, { name: "Bottle brush / cleaning set", estimate: 9 }, { name: "Bottle warmer", estimate: 32 }, { name: "Bottle washer / sterilizer", estimate: 300 }, { name: "Burp cloths (12-pack)", estimate: 12 }, { name: "Formula (backup supply)", estimate: 28 }] },
-  { category: "Sleep", items: [{ name: "Swaddles (4–6)", estimate: 60 }, { name: "Sleep sacks / wearable blankets", estimate: 80 }, { name: "Sound machine / white noise", estimate: 50 }, { name: "Cool-mist humidifier", estimate: 55 }] },
-  { category: "Diapering", items: [{ name: "Newborn diapers (2–4 boxes to start)", estimate: 75 }, { name: "Baby wipes (bulk)", estimate: 25 }, { name: "Diaper pail + refills", estimate: 75 }, { name: "Changing pad / liner", estimate: 150 }, { name: "Diaper caddy", estimate: 13 }, { name: "Diaper rash cream + Aquaphor", estimate: 35 }] },
-  { category: "Bathing", items: [{ name: "Infant bathtub", estimate: 30 }, { name: "Baby wash / shampoo", estimate: 23 }, { name: "Hooded towels (2–3)", estimate: 25 }] },
-  { category: "Clothing", items: [{ name: "Newborn onesies / bodysuits", estimate: 35 }, { name: "0–3 month clothing", estimate: 75 }, { name: "Footed sleepers / pajamas (6–8)", estimate: 50 }, { name: "Hats, mittens, socks", estimate: 37 }, { name: "Laundry detergent (Dreft)", estimate: 22 }] },
-  { category: "Health & safety", items: [{ name: "Digital thermometer", estimate: 10 }, { name: "Nasal aspirator", estimate: 40 }, { name: "Baby nail kit", estimate: 9 }, { name: "First aid kit", estimate: 29 }, { name: "Pacifiers", estimate: 11 }] },
-  { category: "Activity & play", items: [{ name: "Play mat (large foam)", estimate: 166 }, { name: "Crib mobile", estimate: 36 }] },
-  { category: "Classes & prep", items: [{ name: "Childbirth / Lamaze class", estimate: 150 }, { name: "Infant CPR class", estimate: 50 }, { name: "Breastfeeding / lactation consultant", estimate: 200 }] },
-  { category: "Medical (pre-birth)", items: [{ name: "Hospital delivery out-of-pocket", estimate: 1500 }, { name: "Prenatal vitamins (remaining months)", estimate: 100 }, { name: "OB copays (remaining prenatal visits)", estimate: 200 }] },
-  { category: "Legal & admin", items: [{ name: "Will and estate planning", estimate: 800 }, { name: "Life insurance (annual premium)", estimate: 400 }, { name: "529 college savings (initial contribution)", estimate: 500 }] },
-];
 
-const BUDGET_FIRST_YEAR = [
-  { category: "Childcare", items: [{ name: "Daycare (monthly × 12)", estimate: 21600 }, { name: "Backup care / sick days", estimate: 1200 }] },
-  { category: "Diapers & wipes (ongoing)", items: [{ name: "Diapers — monthly × 12", estimate: 960 }, { name: "Wipes — monthly × 12", estimate: 360 }, { name: "Diaper pail refills", estimate: 120 }] },
-  { category: "Feeding (ongoing)", items: [{ name: "Formula if not breastfeeding (monthly × 12)", estimate: 1800 }, { name: "Bibs", estimate: 14 }, { name: "High chair (month 5–6)", estimate: 249 }, { name: "Baby food / purees (month 4–12)", estimate: 600 }] },
-  { category: "Clothing (ongoing)", items: [{ name: "3–6 month clothing", estimate: 75 }, { name: "6–9 month clothing", estimate: 75 }, { name: "9–12 month clothing", estimate: 75 }] },
-  { category: "Healthcare", items: [{ name: "Pediatrician copays (first year, ~8–10 visits)", estimate: 300 }, { name: "Postpartum lactation / mental health visits", estimate: 300 }] },
-  { category: "Activity & gear (4–6+ months)", items: [{ name: "Baby playpen / indoor play yard", estimate: 170 }, { name: "Structured carrier (month 3–4)", estimate: 70 }, { name: "Baby books and toys", estimate: 100 }] },
-];
 
 const DOCTOR_QUESTIONS = {
   T1: ["What prenatal vitamins do you recommend?","Which medications are safe to take during pregnancy?","What foods and drinks should I avoid?","What are the signs of a miscarriage I should watch for?","How much weight gain is expected?","What genetic tests or screenings do you recommend?","Can I continue my current exercise routine?","When should I call the office vs. go to the ER?","What should I know about postpartum depression — what are the signs and how do we plan for it?"],
@@ -536,16 +514,39 @@ function BuyTab({ state, updateState }) {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [registryFilter, setRegistryFilter] = useState("all");
+  const [sortBy, setSortBy] = useState("category"); // category | priority | price-asc | price-desc | status
   const [expandedId, setExpandedId] = useState(null);
-  const [editingBoughtBy, setEditingBoughtBy] = useState(null);
-  const [boughtByInput, setBoughtByInput] = useState("");
+  const [editingField, setEditingField] = useState(null); // { id, field }
+  const [editVal, setEditVal] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [newItem, setNewItem] = useState({ name: "", category: "Other", priority: "Must-Have", price: "", notes: "", fromRegistry: false });
 
   const categories = ["all", ...Array.from(new Set(items.map(i => i.category)))];
   const purchased = items.filter(i => i.purchased).length;
-  const totalSpend = items.filter(i => i.purchased).reduce((s, i) => s + (i.price || 0), 0);
   const totalEstimate = items.reduce((s, i) => s + (i.price || 0), 0);
+  const actualSpend = items.filter(i => i.purchased).reduce((s, i) => s + (i.actualPrice ?? i.price ?? 0), 0);
+
+  function updateItem(id, patch) { updateState({ buyItems: items.map(i => i.id === id ? { ...i, ...patch } : i) }); }
+  function togglePurchased(id) { updateItem(id, { purchased: !items.find(i => i.id === id).purchased }); }
+  function toggleRegistry(id) { updateItem(id, { fromRegistry: !items.find(i => i.id === id).fromRegistry }); }
+  function deleteItem(id) { updateState({ buyItems: items.filter(i => i.id !== id) }); }
+  function startEdit(id, field, current) { setEditingField({ id, field }); setEditVal(current !== undefined && current !== null ? String(current) : ""); }
+  function commitEdit() {
+    if (!editingField) return;
+    const { id, field } = editingField;
+    const val = field === "price" || field === "actualPrice" ? (parseFloat(editVal) || 0) : editVal.trim();
+    updateItem(id, { [field]: val });
+    setEditingField(null);
+  }
+  function addItem() {
+    if (!newItem.name.trim()) return;
+    updateState({ buyItems: [...items, { ...newItem, id: uid(), price: parseFloat(newItem.price) || 0, purchased: false, boughtBy: "" }] });
+    setNewItem({ name: "", category: "Other", priority: "Must-Have", price: "", notes: "", fromRegistry: false });
+    setShowAddForm(false);
+  }
+
+  const priorityOrder = { "Must-Have": 0, "Nice-to-Have": 1, "Consider Waiting": 2 };
+  const priorityColor = { "Must-Have": "#EF4444", "Nice-to-Have": "#F59E0B", "Consider Waiting": "#6B7280" };
 
   const filtered = items.filter(i => {
     if (categoryFilter !== "all" && i.category !== categoryFilter) return false;
@@ -556,17 +557,22 @@ function BuyTab({ state, updateState }) {
     return true;
   });
 
-  function togglePurchased(id) { updateState({ buyItems: items.map(i => i.id === id ? { ...i, purchased: !i.purchased } : i) }); }
-  function saveBoughtBy(id) { updateState({ buyItems: items.map(i => i.id === id ? { ...i, boughtBy: boughtByInput } : i) }); setEditingBoughtBy(null); }
-  function deleteItem(id) { updateState({ buyItems: items.filter(i => i.id !== id) }); }
-  function addItem() { if (!newItem.name.trim()) return; updateState({ buyItems: [...items, { ...newItem, id: uid(), price: parseFloat(newItem.price) || 0, purchased: false, boughtBy: "" }] }); setNewItem({ name: "", category: "Other", priority: "Must-Have", price: "", notes: "", fromRegistry: false }); setShowAddForm(false); }
+  const sorted = [...filtered].sort((a, b) => {
+    if (sortBy === "priority") return (priorityOrder[a.priority] ?? 9) - (priorityOrder[b.priority] ?? 9);
+    if (sortBy === "price-asc") return (a.price || 0) - (b.price || 0);
+    if (sortBy === "price-desc") return (b.price || 0) - (a.price || 0);
+    if (sortBy === "status") return (a.purchased ? 1 : 0) - (b.purchased ? 1 : 0);
+    // default: category
+    return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+  });
 
-  const priorityColor = { "Must-Have": "#EF4444", "Nice-to-Have": "#F59E0B", "Consider Waiting": "#6B7280" };
+  const btnStyle = (active) => ({ padding: "4px 10px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: active ? "none" : "1px solid #ddd", background: active ? "#1a1a1a" : "#fff", color: active ? "#fff" : "#555", whiteSpace: "nowrap" });
 
   return (
     <div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8, marginBottom: 16 }}>
-        {[["Items", items.length], ["Purchased", purchased], ["Spent", "$" + totalSpend.toLocaleString()], ["Est. remaining", "$" + (totalEstimate - totalSpend).toLocaleString()]].map(([l, v]) => (
+      {/* Summary */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8, marginBottom: 12 }}>
+        {[["Items", items.length], ["Purchased", purchased], ["Est. total", "$" + totalEstimate.toLocaleString()], ["Actual spend", "$" + actualSpend.toLocaleString()]].map(([l, v]) => (
           <div key={l} style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 12, padding: 12, textAlign: "center" }}>
             <div style={{ fontSize: 17, fontWeight: 700, color: "#1a1a1a" }}>{v}</div>
             <div style={{ fontSize: 11, color: "#aaa", marginTop: 2 }}>{l}</div>
@@ -576,50 +582,90 @@ function BuyTab({ state, updateState }) {
       <div style={{ background: "#F0EFEA", borderRadius: 6, height: 6, overflow: "hidden", marginBottom: 16 }}>
         <div style={{ width: `${items.length ? Math.round(purchased / items.length * 100) : 0}%`, height: "100%", background: "#1D9E75", borderRadius: 6 }} />
       </div>
-      <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap" }}>
-        <span style={{ fontSize: 12, color: "#aaa", alignSelf: "center" }}>Status:</span>
-        {[["all", "All"], ["needed", "Still needed"], ["purchased", "Purchased"]].map(([k, l]) => <button key={k} onClick={() => setStatusFilter(k)} style={{ padding: "5px 12px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: statusFilter === k ? "none" : "1px solid #ddd", background: statusFilter === k ? "#1a1a1a" : "#fff", color: statusFilter === k ? "#fff" : "#555" }}>{l}</button>)}
-        <span style={{ fontSize: 12, color: "#aaa", alignSelf: "center", marginLeft: 4 }}>Source:</span>
-        {[["all", "All"], ["registry", "Registry"], ["own", "Buying ourselves"]].map(([k, l]) => <button key={k} onClick={() => setRegistryFilter(k)} style={{ padding: "5px 12px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: registryFilter === k ? "none" : "1px solid #ddd", background: registryFilter === k ? "#1a1a1a" : "#fff", color: registryFilter === k ? "#fff" : "#555" }}>{l}</button>)}
+
+      {/* Filters */}
+      <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <span style={{ fontSize: 12, color: "#aaa" }}>Status:</span>
+        {[["all", "All"], ["needed", "Still needed"], ["purchased", "Purchased"]].map(([k, l]) => <button key={k} onClick={() => setStatusFilter(k)} style={btnStyle(statusFilter === k)}>{l}</button>)}
+        <span style={{ fontSize: 12, color: "#aaa", marginLeft: 4 }}>Source:</span>
+        {[["all", "All"], ["registry", "Registry"], ["own", "Buying ourselves"]].map(([k, l]) => <button key={k} onClick={() => setRegistryFilter(k)} style={btnStyle(registryFilter === k)}>{l}</button>)}
       </div>
-      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap" }}>
-        <span style={{ fontSize: 12, color: "#aaa", alignSelf: "center" }}>Category:</span>
-        {categories.map(c => <button key={c} onClick={() => setCategoryFilter(c)} style={{ padding: "4px 10px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: categoryFilter === c ? "none" : "1px solid #ddd", background: categoryFilter === c ? "#1a1a1a" : "#fff", color: categoryFilter === c ? "#fff" : "#555", whiteSpace: "nowrap" }}>{c === "all" ? "All" : c}</button>)}
+      <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <span style={{ fontSize: 12, color: "#aaa" }}>Sort:</span>
+        {[["category", "Category"], ["priority", "Priority"], ["price-asc", "Price ↑"], ["price-desc", "Price ↓"], ["status", "Status"]].map(([k, l]) => <button key={k} onClick={() => setSortBy(k)} style={btnStyle(sortBy === k)}>{l}</button>)}
       </div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+        <span style={{ fontSize: 12, color: "#aaa" }}>Category:</span>
+        {categories.map(c => <button key={c} onClick={() => setCategoryFilter(c)} style={btnStyle(categoryFilter === c)}>{c === "all" ? "All" : c}</button>)}
+      </div>
+
+      {/* List */}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {filtered.map(item => {
+        {sorted.map(item => {
           const isExpanded = expandedId === item.id;
+          const isEditingPrice = editingField?.id === item.id && editingField?.field === "price";
+          const isEditingActual = editingField?.id === item.id && editingField?.field === "actualPrice";
+          const isEditingBoughtBy = editingField?.id === item.id && editingField?.field === "boughtBy";
           return (
-            <div key={item.id} style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 12, overflow: "hidden", opacity: item.purchased ? 0.75 : 1 }}>
+            <div key={item.id} style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 12, overflow: "hidden", opacity: item.purchased ? 0.78 : 1 }}>
+              {/* Row */}
               <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 14px", cursor: "pointer" }} onClick={() => setExpandedId(isExpanded ? null : item.id)}>
                 <div onClick={e => { e.stopPropagation(); togglePurchased(item.id); }} style={{ width: 20, height: 20, borderRadius: 6, border: item.purchased ? "none" : "2px solid #D0CFC8", background: item.purchased ? "#1D9E75" : "transparent", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
                   {item.purchased && <span style={{ color: "#fff", fontSize: 11, fontWeight: 700 }}>✓</span>}
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 14, color: item.purchased ? "#aaa" : "#1a1a1a", textDecoration: item.purchased ? "line-through" : "none", lineHeight: 1.4 }}>{item.name}</div>
-                  <div style={{ display: "flex", gap: 6, marginTop: 3, flexWrap: "wrap", alignItems: "center" }}>
+                  <div style={{ display: "flex", gap: 5, marginTop: 3, flexWrap: "wrap", alignItems: "center" }}>
                     <span style={{ fontSize: 11, color: "#aaa" }}>{item.category}</span>
                     <span style={{ fontSize: 11, fontWeight: 600, color: priorityColor[item.priority] || "#888" }}>{item.priority}</span>
-                    {item.fromRegistry && <span style={{ fontSize: 11, padding: "1px 6px", borderRadius: 8, background: "#E6F1FB", color: "#185FA5", fontWeight: 600 }}>Registry</span>}
-                    {item.boughtBy && <span style={{ fontSize: 11, padding: "1px 6px", borderRadius: 8, background: "#E1F5EE", color: "#0F6E56" }}>Gift from: {item.boughtBy}</span>}
+                    <span onClick={e => { e.stopPropagation(); toggleRegistry(item.id); }} style={{ fontSize: 11, padding: "1px 6px", borderRadius: 8, background: item.fromRegistry ? "#E6F1FB" : "#F0EFEA", color: item.fromRegistry ? "#185FA5" : "#888", fontWeight: 600, cursor: "pointer" }}>{item.fromRegistry ? "Registry" : "Buying ourselves"}</span>
+                    {item.boughtBy && <span style={{ fontSize: 11, padding: "1px 6px", borderRadius: 8, background: "#E1F5EE", color: "#0F6E56" }}>Gift: {item.boughtBy}</span>}
                   </div>
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "#1a1a1a", flexShrink: 0 }}>{item.price ? `$${item.price.toLocaleString()}` : "—"}</div>
+                <div style={{ textAlign: "right", flexShrink: 0 }}>
+                  <div style={{ fontSize: 13, color: "#bbb" }}>${(item.price || 0).toLocaleString()} est.</div>
+                  {item.actualPrice !== undefined && <div style={{ fontSize: 13, fontWeight: 600, color: "#1D9E75" }}>${item.actualPrice.toLocaleString()} actual</div>}
+                </div>
                 <span style={{ fontSize: 14, color: "#bbb", transform: isExpanded ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>▾</span>
               </div>
+
+              {/* Expanded */}
               {isExpanded && (
-                <div style={{ borderTop: "1px solid #F0EFEA", padding: "12px 14px", background: "#FAFAF8" }}>
-                  {item.notes && <div style={{ fontSize: 13, color: "#555", lineHeight: 1.6, marginBottom: 10 }}>{item.notes}</div>}
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+                <div style={{ borderTop: "1px solid #F0EFEA", padding: "12px 14px", background: "#FAFAF8", display: "flex", flexDirection: "column", gap: 10 }}>
+                  {item.notes && <div style={{ fontSize: 13, color: "#555", lineHeight: 1.6 }}>{item.notes}</div>}
+
+                  {/* Price row */}
+                  <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <span style={{ fontSize: 12, color: "#aaa" }}>Est. price:</span>
+                      {isEditingPrice ? (
+                        <div style={{ display: "flex", gap: 4 }}>
+                          <input autoFocus value={editVal} onChange={e => setEditVal(e.target.value)} onKeyDown={e => { if (e.key === "Enter") commitEdit(); if (e.key === "Escape") setEditingField(null); }} onBlur={commitEdit} style={{ width: 80, padding: "3px 6px", border: "1px solid #ccc", borderRadius: 6, fontSize: 13 }} />
+                        </div>
+                      ) : (
+                        <button onClick={() => startEdit(item.id, "price", item.price)} style={{ fontSize: 12, fontWeight: 600, color: "#1a1a1a", background: "none", border: "1px solid #E0DFDA", borderRadius: 6, padding: "2px 8px", cursor: "pointer" }}>${(item.price || 0).toLocaleString()} ✏️</button>
+                      )}
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <span style={{ fontSize: 12, color: "#aaa" }}>Actual:</span>
+                      {isEditingActual ? (
+                        <input autoFocus value={editVal} onChange={e => setEditVal(e.target.value)} onKeyDown={e => { if (e.key === "Enter") commitEdit(); if (e.key === "Escape") setEditingField(null); }} onBlur={commitEdit} style={{ width: 80, padding: "3px 6px", border: "1px solid #ccc", borderRadius: 6, fontSize: 13 }} />
+                      ) : (
+                        <button onClick={() => startEdit(item.id, "actualPrice", item.actualPrice)} style={{ fontSize: 12, fontWeight: 600, color: item.actualPrice !== undefined ? "#1D9E75" : "#aaa", background: "none", border: "1px solid #E0DFDA", borderRadius: 6, padding: "2px 8px", cursor: "pointer" }}>{item.actualPrice !== undefined ? `$${item.actualPrice.toLocaleString()} ✏️` : "+ Enter actual"}</button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Bought by / gift from */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
                     <span style={{ fontSize: 12, color: "#aaa" }}>Gift from / bought by:</span>
-                    {editingBoughtBy === item.id ? (
-                      <div style={{ display: "flex", gap: 6 }}>
-                        <input autoFocus value={boughtByInput} onChange={e => setBoughtByInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter") saveBoughtBy(item.id); if (e.key === "Escape") setEditingBoughtBy(null); }} placeholder="Name..." style={{ padding: "4px 8px", border: "1px solid #ddd", borderRadius: 8, fontSize: 13, width: 140 }} />
-                        <button onClick={() => saveBoughtBy(item.id)} style={{ padding: "4px 10px", background: "#1a1a1a", color: "#fff", border: "none", borderRadius: 8, fontSize: 12, cursor: "pointer" }}>Save</button>
+                    {isEditingBoughtBy ? (
+                      <div style={{ display: "flex", gap: 4 }}>
+                        <input autoFocus value={editVal} onChange={e => setEditVal(e.target.value)} onKeyDown={e => { if (e.key === "Enter") commitEdit(); if (e.key === "Escape") setEditingField(null); }} onBlur={commitEdit} placeholder="Name..." style={{ width: 140, padding: "3px 8px", border: "1px solid #ddd", borderRadius: 6, fontSize: 13 }} />
                       </div>
                     ) : (
-                      <button onClick={() => { setEditingBoughtBy(item.id); setBoughtByInput(item.boughtBy || ""); }} style={{ fontSize: 12, color: "#888", background: "none", border: "1px solid #E0DFDA", borderRadius: 8, padding: "3px 10px", cursor: "pointer" }}>
-                        {item.boughtBy ? `✏️ ${item.boughtBy}` : "+ Add name"}
+                      <button onClick={() => startEdit(item.id, "boughtBy", item.boughtBy)} style={{ fontSize: 12, color: "#888", background: "none", border: "1px solid #E0DFDA", borderRadius: 6, padding: "2px 8px", cursor: "pointer" }}>
+                        {item.boughtBy ? `${item.boughtBy} ✏️` : "+ Add name"}
                       </button>
                     )}
                     <button onClick={() => { if (window.confirm("Delete this item?")) deleteItem(item.id); }} style={{ marginLeft: "auto", background: "none", border: "none", color: "#ccc", cursor: "pointer", fontSize: 13 }}>🗑 Delete</button>
@@ -629,8 +675,10 @@ function BuyTab({ state, updateState }) {
             </div>
           );
         })}
-        {filtered.length === 0 && <div style={{ color: "#ccc", fontSize: 14, textAlign: "center", padding: "40px 0" }}>No items match your filters</div>}
+        {sorted.length === 0 && <div style={{ color: "#ccc", fontSize: 14, textAlign: "center", padding: "40px 0" }}>No items match your filters</div>}
       </div>
+
+      {/* Add form */}
       <div style={{ marginTop: 16 }}>
         {showAddForm ? (
           <div style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 14, padding: 16 }}>
@@ -639,14 +687,14 @@ function BuyTab({ state, updateState }) {
               <input value={newItem.name} onChange={e => setNewItem(p => ({ ...p, name: e.target.value }))} placeholder="Item name *" style={{ padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
               <div style={{ display: "flex", gap: 8 }}>
                 <input value={newItem.category} onChange={e => setNewItem(p => ({ ...p, category: e.target.value }))} placeholder="Category" style={{ flex: 1, padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
-                <input value={newItem.price} onChange={e => setNewItem(p => ({ ...p, price: e.target.value }))} placeholder="Price $" style={{ width: 100, padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
+                <input value={newItem.price} onChange={e => setNewItem(p => ({ ...p, price: e.target.value }))} placeholder="Est. price $" style={{ width: 110, padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
               </div>
               <div style={{ display: "flex", gap: 8 }}>
                 <select value={newItem.priority} onChange={e => setNewItem(p => ({ ...p, priority: e.target.value }))} style={{ flex: 1, padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14, background: "#fff" }}>
                   <option>Must-Have</option><option>Nice-to-Have</option><option>Consider Waiting</option>
                 </select>
                 <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#555", padding: "0 4px" }}>
-                  <input type="checkbox" checked={newItem.fromRegistry} onChange={e => setNewItem(p => ({ ...p, fromRegistry: e.target.checked }))} />From registry
+                  <input type="checkbox" checked={newItem.fromRegistry} onChange={e => setNewItem(p => ({ ...p, fromRegistry: e.target.checked }))} />Registry
                 </label>
               </div>
               <input value={newItem.notes} onChange={e => setNewItem(p => ({ ...p, notes: e.target.value }))} placeholder="Notes (optional)" style={{ padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
@@ -664,44 +712,96 @@ function BuyTab({ state, updateState }) {
   );
 }
 
+const BUDGET_FINANCIAL = [
+  { category: "Healthcare & medical", items: [
+    { name: "Hospital delivery out-of-pocket", estimate: 1500 },
+    { name: "Remaining prenatal OB copays", estimate: 200 },
+    { name: "Prenatal vitamins (remaining months)", estimate: 100 },
+    { name: "Postpartum OB visit copays", estimate: 100 },
+    { name: "Lactation consultant visits", estimate: 200 },
+    { name: "Postpartum mental health visits", estimate: 300 },
+    { name: "Pediatrician copays — first year (~8–10 visits)", estimate: 300 },
+  ]},
+  { category: "Classes & prep", items: [
+    { name: "Childbirth / Lamaze class", estimate: 150 },
+    { name: "Infant CPR class", estimate: 50 },
+    { name: "Delivery prep class", estimate: 75 },
+    { name: "Breastfeeding class", estimate: 75 },
+  ]},
+  { category: "Childcare — first year", items: [
+    { name: "Daycare (monthly × 12)", estimate: 21600 },
+    { name: "Backup care / sick days", estimate: 1200 },
+    { name: "Dependent Care FSA savings (annual max)", estimate: -5000 },
+  ]},
+  { category: "Ongoing consumables — first year", items: [
+    { name: "Diapers — monthly × 12", estimate: 960 },
+    { name: "Wipes — monthly × 12", estimate: 360 },
+    { name: "Diaper pail refills", estimate: 120 },
+    { name: "Formula if not breastfeeding (monthly × 12)", estimate: 1800 },
+    { name: "Baby food / purees (month 4–12)", estimate: 600 },
+  ]},
+  { category: "Legal & estate planning", items: [
+    { name: "Will and estate planning", estimate: 800 },
+    { name: "Life insurance (annual premium)", estimate: 400 },
+    { name: "529 college savings (initial contribution)", estimate: 500 },
+    { name: "Financial advisor (initial consultation)", estimate: 300 },
+  ]},
+  { category: "Clothing — ongoing first year", items: [
+    { name: "3–6 month clothing", estimate: 75 },
+    { name: "6–9 month clothing", estimate: 75 },
+    { name: "9–12 month clothing", estimate: 75 },
+  ]},
+];
+
 function BudgetTab({ state, updateState }) {
   const actuals = state.actuals || {};
   const [editing, setEditing] = useState(null);
   const [inputVal, setInputVal] = useState("");
-  const [view, setView] = useState("pre");
-  const data = view === "pre" ? BUDGET_PRE : BUDGET_FIRST_YEAR;
+  const data = BUDGET_FINANCIAL;
   const totalEstimate = data.flatMap(c => c.items).reduce((s, i) => s + i.estimate, 0);
-  const totalActual = Object.entries(actuals).filter(([k]) => k.startsWith(view + "||")).reduce((s, [, v]) => s + (parseFloat(v) || 0), 0);
+  const totalActual = Object.entries(actuals).filter(([k]) => k.startsWith("fin||")).reduce((s, [, v]) => s + (parseFloat(v) || 0), 0);
+  const buyItems = state.buyItems || SEED_ITEMS;
+  const buyEstimate = buyItems.reduce((s, i) => s + (i.price || 0), 0);
+  const buyActual = buyItems.filter(i => i.purchased).reduce((s, i) => s + (i.actualPrice ?? i.price ?? 0), 0);
   function startEdit(key, current) { setEditing(key); setInputVal(current !== undefined ? String(current) : ""); }
   function commitEdit(key) { const val = parseFloat(inputVal); const next = { ...actuals }; if (isNaN(val) || inputVal.trim() === "") { delete next[key]; } else { next[key] = val; } updateState({ actuals: next }); setEditing(null); }
   return (
     <div>
-      <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
-        <button onClick={() => setView("pre")} style={{ padding: "7px 16px", borderRadius: 20, fontSize: 13, cursor: "pointer", border: view === "pre" ? "none" : "1px solid #ddd", background: view === "pre" ? "#1a1a1a" : "#fff", color: view === "pre" ? "#fff" : "#555", fontWeight: 500 }}>Before baby arrives</button>
-        <button onClick={() => setView("year1")} style={{ padding: "7px 16px", borderRadius: 20, fontSize: 13, cursor: "pointer", border: view === "year1" ? "none" : "1px solid #ddd", background: view === "year1" ? "#1a1a1a" : "#fff", color: view === "year1" ? "#fff" : "#555", fontWeight: 500 }}>First year with baby</button>
-      </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+      {/* Summary cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
         <div style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 14, padding: 16 }}>
-          <div style={{ fontSize: 12, color: "#aaa", marginBottom: 4 }}>Estimated total</div>
-          <div style={{ fontSize: 26, fontWeight: 700, color: "#1a1a1a" }}>${totalEstimate.toLocaleString()}</div>
+          <div style={{ fontSize: 12, color: "#aaa", marginBottom: 4 }}>Financial est. total</div>
+          <div style={{ fontSize: 24, fontWeight: 700, color: "#1a1a1a" }}>${totalEstimate.toLocaleString()}</div>
+          <div style={{ fontSize: 11, color: "#aaa", marginTop: 2 }}>healthcare, childcare, legal</div>
         </div>
         <div style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 14, padding: 16 }}>
-          <div style={{ fontSize: 12, color: "#aaa", marginBottom: 4 }}>Your actual spend</div>
-          <div style={{ fontSize: 26, fontWeight: 700, color: totalActual > totalEstimate ? "#C0392B" : "#1D9E75" }}>${totalActual.toLocaleString()}</div>
-          <div style={{ fontSize: 12, color: "#aaa", marginTop: 2 }}>click any row to enter</div>
+          <div style={{ fontSize: 12, color: "#aaa", marginBottom: 4 }}>Actual spend entered</div>
+          <div style={{ fontSize: 24, fontWeight: 700, color: totalActual > totalEstimate ? "#C0392B" : "#1D9E75" }}>${totalActual.toLocaleString()}</div>
+          <div style={{ fontSize: 11, color: "#aaa", marginTop: 2 }}>click any row to enter</div>
         </div>
       </div>
+
+      {/* Shopping summary banner */}
+      <div style={{ background: "#F6FBF7", border: "1px solid #C8EAD6", borderRadius: 12, padding: "12px 16px", marginBottom: 20, display: "flex", alignItems: "center", gap: 10 }}>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: "#0F6E56" }}>Shopping budget — tracked in Items to Buy tab</div>
+          <div style={{ fontSize: 12, color: "#555", marginTop: 2 }}>Est. ${buyEstimate.toLocaleString()} · Actual spent ${buyActual.toLocaleString()}</div>
+        </div>
+        <span style={{ fontSize: 18 }}>🛒</span>
+      </div>
+
+      {/* Financial line items */}
       {data.map(cat => (
         <div key={cat.category} style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 14, overflow: "hidden", marginBottom: 10 }}>
           <div style={{ padding: "12px 16px", background: "#FAFAF8", borderBottom: "1px solid #F0EFEA", fontSize: 13, fontWeight: 700, color: "#1a1a1a" }}>{cat.category}</div>
           {cat.items.map(item => {
-            const key = `${view}||${cat.category}||${item.name}`;
+            const key = `fin||${cat.category}||${item.name}`;
             const actual = actuals[key];
             const isEditing = editing === key;
             return (
               <div key={item.name} onClick={() => !isEditing && startEdit(key, actual)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 16px", borderBottom: "1px solid #F8F8F6", cursor: "pointer" }}>
                 <div style={{ flex: 1, fontSize: 13, color: "#333" }}>{item.name}</div>
-                <div style={{ fontSize: 12, color: "#bbb", marginRight: 8 }}>${item.estimate.toLocaleString()}</div>
+                <div style={{ fontSize: 12, color: "#bbb", marginRight: 8 }}>{item.estimate < 0 ? `-$${Math.abs(item.estimate).toLocaleString()}` : `$${item.estimate.toLocaleString()}`}</div>
                 {isEditing ? (
                   <div style={{ display: "flex", gap: 6 }} onClick={e => e.stopPropagation()}>
                     <input autoFocus value={inputVal} onChange={e => setInputVal(e.target.value)} onKeyDown={e => { if (e.key === "Enter") commitEdit(key); if (e.key === "Escape") setEditing(null); }} placeholder="0" style={{ width: 80, padding: "4px 8px", border: "1px solid #ccc", borderRadius: 8, fontSize: 13 }} />
