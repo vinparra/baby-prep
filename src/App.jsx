@@ -109,89 +109,89 @@ const LABELS = [
 ];
 
 const SEED_ITEMS = [
-  { id: "i1", category: "Sleep – Bassinet", name: "Bedside/co-sleeper bassinet", priority: "Must-Have", price: 300, notes: "Halo BassiNest Swivel Sleeper or Maxi-Cosi Iora. Drop-down side docks flush against your mattress.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "i2", category: "Sleep – Bassinet", name: "Bassinet fitted sheets (3–4)", priority: "Must-Have", price: 28, notes: "Buy sheets made for your exact bassinet model.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "i3", category: "Sleep – Bassinet", name: "Muslin bassinet sheets – Pink Rainbow (TansyPanda)", priority: "Must-Have", price: 20, notes: "Fits Maxi-Cosi Iora, Delta Children, Graco, Munchkin Brica, 4moms MamaRoo, Chicco LullaGlide.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i4", category: "Sleep – Bassinet", name: "Delta Children Bondi Bedside Bassinet", priority: "Must-Have", price: 175, notes: "Adjustable height, PureAir mesh sheet, FSC-certified beechwood.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i5", category: "Sleep – Crib", name: "Mini crib (~24x38\")", priority: "Must-Have", price: 220, notes: "Dream On Me Aden 4-in-1 Mini Crib. Uses roughly half the floor space of a standard crib.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "i6", category: "Sleep – Crib", name: "Mini crib mattress + 2 waterproof protectors", priority: "Must-Have", price: 120, notes: "Buy the mini-crib-sized mattress that matches your crib brand. Firm and well-fitting is essential.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "i7", category: "Sleep – Crib", name: "Mini crib fitted sheets (3–4)", priority: "Must-Have", price: 30, notes: "Mini-crib sheets are a different size than standard crib sheets — double-check fit.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "i1", category: "Sleep – Bassinet", name: "Bedside bassinet", priority: "Must-Have", price: 300, notes: "Halo BassiNest Swivel Sleeper or Maxi-Cosi Iora. Drop-down side docks flush against your mattress.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "i2", category: "Sleep – Bassinet", name: "Bassinet sheets (3–4)", priority: "Must-Have", price: 28, notes: "Buy sheets made for your exact bassinet model.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "i3", category: "Sleep – Bassinet", name: "Muslin bassinet sheets", priority: "Must-Have", price: 20, notes: "Fits Maxi-Cosi Iora, Delta Children, Graco, Munchkin Brica, 4moms MamaRoo, Chicco LullaGlide.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i4", category: "Sleep – Bassinet", name: "Bedside bassinet (Delta Children Bondi)", priority: "Must-Have", price: 175, notes: "Adjustable height, PureAir mesh sheet, FSC-certified beechwood.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i5", category: "Sleep – Crib", name: "Mini crib", priority: "Must-Have", price: 220, notes: "Dream On Me Aden 4-in-1 Mini Crib. Uses roughly half the floor space of a standard crib.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "i6", category: "Sleep – Crib", name: "Mini crib mattress + protectors", priority: "Must-Have", price: 120, notes: "Buy the mini-crib-sized mattress that matches your crib brand. Firm and well-fitting is essential.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "i7", category: "Sleep – Crib", name: "Mini crib sheets (3–4)", priority: "Must-Have", price: 30, notes: "Mini-crib sheets are a different size than standard crib sheets — double-check fit.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "i8", category: "Sleep – General", name: "Swaddles (4–6)", priority: "Must-Have", price: 30, notes: "Love to Dream Swaddle Up or HALO Cotton Swaddle recommended.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "i9", category: "Sleep – General", name: "Arms-up swaddle 2-pack (Gray Stars)", priority: "Must-Have", price: 31, notes: "0–3 months, cuff removable, 2-way zipper.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i10", category: "Sleep – General", name: "Arms-up swaddle 2-pack (Pink Bunny)", priority: "Must-Have", price: 30, notes: "0–3 months, cuff removable, 2-way zipper.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i11", category: "Sleep – General", name: "Burt's Bees Wearable Blanket (0.5 TOG)", priority: "Must-Have", price: 23, notes: "Light weight, organic cotton, unisex.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i12", category: "Sleep – General", name: "Burt's Bees Wearable Blanket (1.5 TOG)", priority: "Must-Have", price: 23, notes: "Medium weight, organic cotton, unisex.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i13", category: "Sleep – General", name: "HALO SleepSack (TOG 0.5, Midnight Moons, 6–12mo)", priority: "Must-Have", price: 35, notes: "For the transition out of swaddling.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i14", category: "Sleep – General", name: "HALO SleepSack (TOG 0.5, Lullaby Forest, 6–12mo)", priority: "Must-Have", price: 35, notes: "For the transition out of swaddling.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "i15", category: "Sleep – General", name: "Sleep sacks 2.5 TOG for Chicago winter", priority: "Must-Have", price: 44, notes: "Aim for 2.5 TOG for a room around 68°F. Kyte Baby Sleep Bag recommended.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "i9", category: "Sleep – General", name: "Swaddle sleep sacks (gray)", priority: "Must-Have", price: 31, notes: "0–3 months, cuff removable, 2-way zipper.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i10", category: "Sleep – General", name: "Swaddle sleep sacks (pink)", priority: "Must-Have", price: 30, notes: "0–3 months, cuff removable, 2-way zipper.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i11", category: "Sleep – General", name: "Wearable blanket (light, 0.5 TOG)", priority: "Must-Have", price: 23, notes: "Light weight, organic cotton, unisex.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i12", category: "Sleep – General", name: "Wearable blanket (medium, 1.5 TOG)", priority: "Must-Have", price: 23, notes: "Medium weight, organic cotton, unisex.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i13", category: "Sleep – General", name: "Sleep sack (TOG 0.5, 6–12mo)", priority: "Must-Have", price: 35, notes: "For the transition out of swaddling.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i14", category: "Sleep – General", name: "Sleep sack (TOG 0.5, 6–12mo) #2", priority: "Must-Have", price: 35, notes: "For the transition out of swaddling.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i15", category: "Sleep – General", name: "Sleep sacks (2.5 TOG, winter)", priority: "Must-Have", price: 44, notes: "Aim for 2.5 TOG for a room around 68°F. Kyte Baby Sleep Bag recommended.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "i16", category: "Sleep – General", name: "Sound machine / white noise machine", priority: "Nice-to-Have", price: 50, notes: "Yogasleep Dohm Classic or Hatch Rest 2nd Gen (app-controlled).", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "i17", category: "Sleep – General", name: "Cool-mist humidifier", priority: "Must-Have", price: 55, notes: "Chicago forced-air winter heat dries indoor air fast. Never warm mist (burn risk). Levoit Classic 160 recommended.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "i18", category: "Sleep – General", name: "Vicks SleepyTime Cool Mist Humidifier 3-in-1", priority: "Must-Have", price: 38, notes: "With night light. Works with Vicks SleepyTime Vapopads.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "i18", category: "Sleep – General", name: "Cool-mist humidifier", priority: "Must-Have", price: 38, notes: "With night light. Works with Vicks SleepyTime Vapopads.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "i19", category: "Sleep – General", name: "Baby monitor", priority: "Must-Have", price: 180, notes: "Eufy E21 (hybrid WiFi/local, no subscription) is best value. Nanit Pro for sleep tracking.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "i20", category: "Sleep – General", name: "Crib mobile (pink, 35 lullabies)", priority: "Nice-to-Have", price: 36, notes: "3 modes: turn only, music only, turn & music.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d1", category: "Diapering", name: "Pampers Swaddlers Newborn diapers (84 count)", priority: "Must-Have", price: 28, notes: "Fragrance-free, hypoallergenic.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d2", category: "Diapering", name: "Pampers Swaddlers Newborn diapers (140 count)", priority: "Must-Have", price: 45, notes: "Don't over-stock newborn — babies size up within 4–8 weeks.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d1", category: "Diapering", name: "Newborn diapers (84 count)", priority: "Must-Have", price: 28, notes: "Fragrance-free, hypoallergenic.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d2", category: "Diapering", name: "Newborn diapers (140 count)", priority: "Must-Have", price: 45, notes: "Don't over-stock newborn — babies size up within 4–8 weeks.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "d3", category: "Diapering", name: "Baby wipes (8–12 packs bulk)", priority: "Must-Have", price: 25, notes: "Buy in bulk once you know which brand works for baby's skin.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "d4", category: "Diapering", name: "Diaper Genie Complete + refill + carbon filter", priority: "Must-Have", price: 55, notes: "Holds 270 newborn diapers per refill.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d5", category: "Diapering", name: "Diaper Genie refill bags 270-count (Pack of 3)", priority: "Must-Have", price: 20, notes: "Clean Laundry scent, holds up to 810 newborn diapers.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d6", category: "Diapering", name: "Keekaroo Peanut Changer (vanilla)", priority: "Must-Have", price: 150, notes: "Water-repellant, fully wipeable changing pad.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d7", category: "Diapering", name: "Disposable underpads / changing liners (100 count)", priority: "Must-Have", price: 26, notes: "13x18\", waterproof, quick-absorb.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d8", category: "Diapering", name: "Maliton felt diaper caddy organizer (Khaki)", priority: "Nice-to-Have", price: 13, notes: "15x9x7\", portable.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d9", category: "Diapering", name: "Frida Baby diaper cream spatula (silicone)", priority: "Nice-to-Have", price: 8, notes: "BPA-free, suction-cup base.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "d10", category: "Diapering", name: "Aquaphor Baby Skincare Set (14oz ointment + 3.5oz diaper cream)", priority: "Must-Have", price: 27, notes: "Fragrance-free, dermatologist-tested.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d4", category: "Diapering", name: "Diaper pail + refill", priority: "Must-Have", price: 55, notes: "Holds 270 newborn diapers per refill.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d5", category: "Diapering", name: "Diaper pail refill bags (3-pack)", priority: "Must-Have", price: 20, notes: "Clean Laundry scent, holds up to 810 newborn diapers.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d6", category: "Diapering", name: "Wipeable changing pad", priority: "Must-Have", price: 150, notes: "Water-repellant, fully wipeable changing pad.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d7", category: "Diapering", name: "Disposable changing liners (100 count)", priority: "Must-Have", price: 26, notes: "13x18\", waterproof, quick-absorb.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d8", category: "Diapering", name: "Diaper caddy organizer", priority: "Nice-to-Have", price: 13, notes: "15x9x7\", portable.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d9", category: "Diapering", name: "Diaper cream spatula", priority: "Nice-to-Have", price: 8, notes: "BPA-free, suction-cup base.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "d10", category: "Diapering", name: "Aquaphor + diaper rash cream set", priority: "Must-Have", price: 27, notes: "Fragrance-free, dermatologist-tested.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "d11", category: "Diapering", name: "Diaper rash cream (Desitin or Boudreaux's)", priority: "Must-Have", price: 8, notes: "Zinc-oxide creams are the pediatrician-standard first choice.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "f1", category: "Feeding", name: "Breast pump — check insurance first", priority: "Must-Have", price: 0, notes: "Most ACA-compliant plans cover at least one pump. Spectra S1/S2 often fully covered.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "f2", category: "Feeding", name: "My Brest Friend nursing pillow (Deluxe)", priority: "Must-Have", price: 57, notes: "Adjustable backrest, side pocket. Also works as tummy-time support.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f3", category: "Feeding", name: "Dr. Brown's Anti-Colic Bottle Gift Set (4oz + 8oz)", priority: "Must-Have", price: 25, notes: "Includes HappyPaci and storage caps.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f2", category: "Feeding", name: "Nursing pillow", priority: "Must-Have", price: 57, notes: "Adjustable backrest, side pocket. Also works as tummy-time support.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f3", category: "Feeding", name: "Bottle gift set (4oz + 8oz)", priority: "Must-Have", price: 25, notes: "Includes HappyPaci and storage caps.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "f4", category: "Feeding", name: "Philips Avent bottle drying rack", priority: "Nice-to-Have", price: 17, notes: "Fits 8 bottles. Compact, dishwasher safe.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "f5", category: "Feeding", name: "4-in-1 bottle brush set", priority: "Nice-to-Have", price: 9, notes: "Nylon bottle brush, cap brushes, straw brushes. BPA-free.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f6", category: "Feeding", name: "Momcozy KleanPal Pro bottle washer/sterilizer/dryer", priority: "Nice-to-Have", price: 300, notes: "9 cleaning modes, 26 spray jets. All-in-one appliance.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f7", category: "Feeding", name: "Grownsy 8-in-1 bottle warmer with timer", priority: "Nice-to-Have", price: 32, notes: "Fast & even heating, multi-use.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f8", category: "Feeding", name: "Muslin burp cloths 12-pack (100% cotton, 20x10\")", priority: "Must-Have", price: 12, notes: "Extra soft and absorbent. Doubles as light blanket.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f9", category: "Feeding", name: "KeaBabies 8-pack organic baby bibs (Constellation)", priority: "Nice-to-Have", price: 14, notes: "Soft cotton, extra absorbent, 0–24 months.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f10", category: "Feeding", name: "Philips Avent Soothie pacifiers (4-pack, Lilac/Pink)", priority: "Must-Have", price: 11, notes: "BPA-free, medical-grade silicone, 0–3 months.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f11", category: "Feeding", name: "Bubs Grass Fed Infant Formula (20oz)", priority: "Nice-to-Have", price: 28, notes: "Non-GMO, with iron, DHA, prebiotics & probiotics. Good to have as backup.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f12", category: "Feeding", name: "Stokke Steps High Chair (White/Natural)", priority: "Consider Waiting", price: 249, notes: "6 months to 10 years. Buy closer to month 5–6.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f13", category: "Feeding", name: "Dr. Brown's first straw cup 2-pack", priority: "Consider Waiting", price: 10, notes: "For 4–6+ months transition from bottle.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "f14", category: "Feeding", name: "Baby tongue cleaner / disposable oral cleaner (40 count)", priority: "Nice-to-Have", price: 10, notes: "For newborn mouth and gum cleaning.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "ba1", category: "Bathing", name: "Baby bath support with thermometer", priority: "Must-Have", price: 30, notes: "For babies under 6 months. Puj Flyte folds flat for storage.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "ba2", category: "Bathing", name: "Baby Dove Sensitive Skin Care baby wash (fragrance-free, 20oz)", priority: "Must-Have", price: 8, notes: "Tear-free formula, for sensitive baby skin.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "ba3", category: "Bathing", name: "Cetaphil Baby wash & shampoo + lotion bundle (2ct)", priority: "Must-Have", price: 15, notes: "Hypoallergenic, tear-free, gentle for newborns.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f6", category: "Feeding", name: "Bottle washer / sterilizer / dryer", priority: "Nice-to-Have", price: 300, notes: "9 cleaning modes, 26 spray jets. All-in-one appliance.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f7", category: "Feeding", name: "Bottle warmer", priority: "Nice-to-Have", price: 32, notes: "Fast & even heating, multi-use.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f8", category: "Feeding", name: "Muslin burp cloths (12-pack)", priority: "Must-Have", price: 12, notes: "Extra soft and absorbent. Doubles as light blanket.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f9", category: "Feeding", name: "Baby bibs (8-pack)", priority: "Nice-to-Have", price: 14, notes: "Soft cotton, extra absorbent, 0–24 months.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f10", category: "Feeding", name: "Pacifiers (4-pack)", priority: "Must-Have", price: 11, notes: "BPA-free, medical-grade silicone, 0–3 months.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f11", category: "Feeding", name: "Infant formula (backup)", priority: "Nice-to-Have", price: 28, notes: "Non-GMO, with iron, DHA, prebiotics & probiotics. Good to have as backup.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f12", category: "Feeding", name: "High chair", priority: "Consider Waiting", price: 249, notes: "6 months to 10 years. Buy closer to month 5–6.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f13", category: "Feeding", name: "First straw cup (2-pack)", priority: "Consider Waiting", price: 10, notes: "For 4–6+ months transition from bottle.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "f14", category: "Feeding", name: "Baby tongue / gum cleaners (40 count)", priority: "Nice-to-Have", price: 10, notes: "For newborn mouth and gum cleaning.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ba1", category: "Bathing", name: "Infant bathtub with thermometer", priority: "Must-Have", price: 30, notes: "For babies under 6 months. Puj Flyte folds flat for storage.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ba2", category: "Bathing", name: "Baby wash (fragrance-free)", priority: "Must-Have", price: 8, notes: "Tear-free formula, for sensitive baby skin.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ba3", category: "Bathing", name: "Baby wash & shampoo bundle", priority: "Must-Have", price: 15, notes: "Hypoallergenic, tear-free, gentle for newborns.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "ba4", category: "Bathing", name: "Hooded towels (2–3)", priority: "Must-Have", price: 25, notes: "Newborns only need a bath 2–3x/week.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "cl1i", category: "Clothing", name: "Gerber 8-pack onesies (Newborn)", priority: "Must-Have", price: 17, notes: "Don't over-buy newborn — often outgrown within 2–4 weeks.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl2i", category: "Clothing", name: "Gerber 8-pack onesies (0–3 months)", priority: "Must-Have", price: 17, notes: "0–3 month size goes much further than newborn.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl3i", category: "Clothing", name: "Little Me footie & headband set (Preemie–9 months)", priority: "Must-Have", price: 15, notes: "100% cotton, scratch-free tag, zipper closure.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl4i", category: "Clothing", name: "Little Me footie pajamas — Flora (Newborn)", priority: "Must-Have", price: 14, notes: "Long sleeve, scratch-free tag, zipper front.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl5i", category: "Clothing", name: "Little Me Sweet Bear Footie (Light Pink, Newborn)", priority: "Must-Have", price: 13, notes: "Long sleeve footed sleeper.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl6i", category: "Clothing", name: "Little Me Ivory Floral Side-Snap Footie (3 months)", priority: "Must-Have", price: 18, notes: "Long sleeve, scratch-free tag.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl7i", category: "Clothing", name: "Carter's fleece footed sleepers warm (6–8)", priority: "Must-Have", price: 25, notes: "Prioritize warm fleece for the Chicago winter.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "cl8i", category: "Clothing", name: "8-pair newborn no-scratch mittens (0–6 months)", priority: "Must-Have", price: 8, notes: "Cotton gloves to prevent face scratching.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl9i", category: "Clothing", name: "Cotton newborn hats with bear ears (0–6 months)", priority: "Must-Have", price: 20, notes: "Newborns lose a lot of heat through their heads.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl10i", category: "Clothing", name: "Organic cotton baby girl socks 6-pack (0–6 months)", priority: "Must-Have", price: 9, notes: "GOTS certified, Oeko-Tex certified, pink.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "cl11i", category: "Clothing", name: "Dreft baby liquid laundry detergent (42oz, 2-pack)", priority: "Must-Have", price: 22, notes: "Gentle on sensitive skin, 32 loads per bottle.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl1i", category: "Clothing", name: "Onesies — Newborn (8-pack)", priority: "Must-Have", price: 17, notes: "Don't over-buy newborn — often outgrown within 2–4 weeks.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl2i", category: "Clothing", name: "Onesies — 0–3 months (8-pack)", priority: "Must-Have", price: 17, notes: "0–3 month size goes much further than newborn.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl3i", category: "Clothing", name: "Footie & headband set", priority: "Must-Have", price: 15, notes: "100% cotton, scratch-free tag, zipper closure.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl4i", category: "Clothing", name: "Footie pajamas (Newborn)", priority: "Must-Have", price: 14, notes: "Long sleeve, scratch-free tag, zipper front.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl5i", category: "Clothing", name: "Footie pajamas — Sweet Bear (Newborn)", priority: "Must-Have", price: 13, notes: "Long sleeve footed sleeper.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl6i", category: "Clothing", name: "Footie pajamas — Ivory Floral (3 months)", priority: "Must-Have", price: 18, notes: "Long sleeve, scratch-free tag.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl7i", category: "Clothing", name: "Warm fleece footed sleepers (6–8)", priority: "Must-Have", price: 25, notes: "Prioritize warm fleece for the Chicago winter.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "cl8i", category: "Clothing", name: "No-scratch mittens (8-pair)", priority: "Must-Have", price: 8, notes: "Cotton gloves to prevent face scratching.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl9i", category: "Clothing", name: "Newborn hats (bear ear style)", priority: "Must-Have", price: 20, notes: "Newborns lose a lot of heat through their heads.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl10i", category: "Clothing", name: "Baby socks (6-pack)", priority: "Must-Have", price: 9, notes: "GOTS certified, Oeko-Tex certified, pink.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "cl11i", category: "Clothing", name: "Baby laundry detergent (2-pack)", priority: "Must-Have", price: 22, notes: "Gentle on sensitive skin, 32 loads per bottle.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "ng1", category: "Nursery Gear", name: "Glider or recliner (compact/small-space model)", priority: "Must-Have", price: 450, notes: "Delta Children Mercer Power Recliner or DaVinci Suzy Glider.", fromRegistry: false, boughtBy: "", purchased: true },
   { id: "ng2", category: "Nursery Gear", name: "Dresser (doubles as changing station)", priority: "Must-Have", price: 350, notes: "One piece doing two jobs saves space. IKEA Hemnes or Storkcraft Modern Nursery Dresser.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "ng3", category: "Nursery Gear", name: "Graco Benton changing table with waterproof pad", priority: "Must-Have", price: 130, notes: "GREENGUARD Gold Certified, includes diaper change pad with safety strap.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ng3", category: "Nursery Gear", name: "Changing table with pad", priority: "Must-Have", price: 130, notes: "GREENGUARD Gold Certified, includes diaper change pad with safety strap.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "ng4", category: "Nursery Gear", name: "Sleeper sofa for nursery", priority: "Must-Have", price: 800, notes: "Helpful for overnight stays and night feeds.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "ng5", category: "Nursery Gear", name: "Area rug 8x10 or 9x12", priority: "Must-Have", price: 300, notes: "Cushioning and warmth for Chicago winters.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "ng6", category: "Nursery Gear", name: "Thick rug pad", priority: "Must-Have", price: 60, notes: "For cushioning and noise reduction.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "ng7", category: "Nursery Gear", name: "Felt furniture pads", priority: "Nice-to-Have", price: 10, notes: "Protects new nursery floors.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "ng8", category: "Nursery Gear", name: "Storage bins / closet organizers", priority: "Nice-to-Have", price: 35, notes: "Under-crib bins and hanging closet dividers make a small nursery closet function much better.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "t1", category: "Travel & Gear", name: "Infant car seat", priority: "Must-Have", price: 350, notes: "Nuna PIPA RX (~8.5 lbs, Consumer Reports Best) recommended for a smaller-build parent. Must have before hospital discharge.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "t2", category: "Travel & Gear", name: "Graco 4Ever DLX 4-in-1 car seat (Charlie)", priority: "Must-Have", price: 320, notes: "Infant to toddler, 10 years of use.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "t2", category: "Travel & Gear", name: "Convertible car seat (Graco 4Ever)", priority: "Must-Have", price: 320, notes: "Infant to toddler, 10 years of use.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "t3", category: "Travel & Gear", name: "Stroller", priority: "Must-Have", price: 380, notes: "Baby Jogger City Mini GT2 is top pick for Chicago winters — puncture-proof tires, all-wheel suspension.", fromRegistry: false, boughtBy: "", purchased: true },
   { id: "t4", category: "Travel & Gear", name: "Car seat winter cover / footmuff", priority: "Must-Have", price: 50, notes: "Never put baby in car seat with a bulky coat. A cover goes over the buckled baby instead.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "t5", category: "Travel & Gear", name: "Momcozy baby wrap carrier (Grey, XXS–XXL)", priority: "Must-Have", price: 34, notes: "Easy-on 2-piece design, newborn to 33 lbs, IHDI hip-healthy.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "t6", category: "Travel & Gear", name: "BabyBjörn Baby Carrier Mini (Dark Gray, 7–25 lbs)", priority: "Must-Have", price: 100, notes: "Ergonomic, easy-to-use infant carrier.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "t7", category: "Travel & Gear", name: "Structured baby carrier for month 3–4+", priority: "Must-Have", price: 70, notes: "Ergobaby Omni 360 for toddler phase.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "t8", category: "Travel & Gear", name: "Graco Pack n Play with bassinet (Reeves)", priority: "Nice-to-Have", price: 89, notes: "Folding playpen with bassinet and portable crib.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "t5", category: "Travel & Gear", name: "Baby wrap carrier", priority: "Must-Have", price: 34, notes: "Easy-on 2-piece design, newborn to 33 lbs, IHDI hip-healthy.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "t6", category: "Travel & Gear", name: "Baby carrier (BabyBjörn Mini)", priority: "Must-Have", price: 100, notes: "Ergonomic, easy-to-use infant carrier.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "t7", category: "Travel & Gear", name: "Structured carrier (for month 3–4+)", priority: "Must-Have", price: 70, notes: "Ergobaby Omni 360 for toddler phase.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "t8", category: "Travel & Gear", name: "Pack 'n Play with bassinet", priority: "Nice-to-Have", price: 89, notes: "Folding playpen with bassinet and portable crib.", fromRegistry: true, boughtBy: "", purchased: false },
   { id: "hs1", category: "Health & Safety", name: "Digital thermometer (rectal)", priority: "Must-Have", price: 10, notes: "Pediatricians recommend rectal thermometers as most accurate for newborns.", fromRegistry: false, boughtBy: "", purchased: false },
-  { id: "hs2", category: "Health & Safety", name: "GROWNSY electric nasal aspirator", priority: "Must-Have", price: 40, notes: "Powerful suction, soft silicone tips, music and light soothing function.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "hs3", category: "Health & Safety", name: "Baby nail kit 4-in-1 (nail clippers, scissors, file, tweezers)", priority: "Must-Have", price: 9, notes: "Newborn nails grow fast and scratch.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "hs4", category: "Health & Safety", name: "Kids First Aid Kit 75-piece", priority: "Nice-to-Have", price: 29, notes: "TSA approved, latex-free, fits diaper bag.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "ag1", category: "Activity & Gear", name: "LITTLE Bot Ofie Play Mat (Country Road, Large 6.5x4.5ft)", priority: "Must-Have", price: 166, notes: "Reversible foam floor mat, durable and non-toxic.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "ag2", category: "Activity & Gear", name: "Wooden baby playpen / indoor play yard (73x63\")", priority: "Consider Waiting", price: 170, notes: "Montessori style. Buy closer to when baby is mobile.", fromRegistry: true, boughtBy: "", purchased: false },
-  { id: "ow1", category: "Health & Safety", name: "Owlet Smart Sock baby monitor", priority: "Nice-to-Have", price: 299, notes: "Tracks baby's oxygen level and heart rate while sleeping. Alerts you to readings outside normal ranges. Not a medical device but gives many parents peace of mind.", fromRegistry: false, boughtBy: "", purchased: false },
+  { id: "hs2", category: "Health & Safety", name: "Electric nasal aspirator", priority: "Must-Have", price: 40, notes: "Powerful suction, soft silicone tips, music and light soothing function.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "hs3", category: "Health & Safety", name: "Baby nail kit", priority: "Must-Have", price: 9, notes: "Newborn nails grow fast and scratch.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "hs4", category: "Health & Safety", name: "Baby first aid kit", priority: "Nice-to-Have", price: 29, notes: "TSA approved, latex-free, fits diaper bag.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ag1", category: "Activity & Gear", name: "Play mat (large, foam)", priority: "Must-Have", price: 166, notes: "Reversible foam floor mat, durable and non-toxic.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ag2", category: "Activity & Gear", name: "Indoor play yard / playpen", priority: "Consider Waiting", price: 170, notes: "Montessori style. Buy closer to when baby is mobile.", fromRegistry: true, boughtBy: "", purchased: false },
+  { id: "ow1", category: "Health & Safety", name: "Owlet Smart Sock", priority: "Nice-to-Have", price: 299, notes: "Tracks baby's oxygen level and heart rate while sleeping. Alerts you to readings outside normal ranges. Not a medical device but gives many parents peace of mind.", fromRegistry: false, boughtBy: "", purchased: false },
   { id: "oi1", category: "Self-Care & Wellness", name: "Baby-safe oils (coconut, chamomile, or baby massage oil)", priority: "Nice-to-Have", price: 20, notes: "Used for baby massage, dry skin, and cradle cap. Look for fragrance-free, cold-pressed options. Always do a patch test first.", fromRegistry: false, boughtBy: "", purchased: false },
 ];
 
@@ -249,6 +249,7 @@ export default function App() {
         if (!data.todos) data.todos = DEFAULT_TODOS;
         if (!data.customTasks) data.customTasks = SEED_TASKS.flatMap(s => s.items.map(i => ({ ...i, section: s.section })));
         if (!data.buyItems) data.buyItems = SEED_ITEMS;
+        if (!data.registryGifts) data.registryGifts = [];
         setState(data);
       } else {
         const seed = { todos: DEFAULT_TODOS, customTasks: SEED_TASKS.flatMap(s => s.items.map(i => ({ ...i, section: s.section }))), buyItems: SEED_ITEMS, checked: {}, actuals: {}, customQs: {}, answeredQs: {} };
@@ -270,6 +271,7 @@ export default function App() {
   const tabs = [
     { key: "checklist", label: "✓ Checklist" },
     { key: "buy", label: "🛒 Items to Buy" },
+    { key: "registry", label: "🎁 Registry" },
     { key: "budget", label: "💰 Budget" },
     { key: "doctor", label: "👩‍⚕️ Doctor Q&A" },
     { key: "meals", label: "🍲 Meals" },
@@ -290,6 +292,7 @@ export default function App() {
       <div style={{ maxWidth: 860, margin: "0 auto", padding: "24px 24px 80px" }}>
         {activeTab === "checklist" && <ChecklistTab state={state} updateState={updateState} />}
         {activeTab === "buy" && <BuyTab state={state} updateState={updateState} />}
+        {activeTab === "registry" && <RegistryTab state={state} updateState={updateState} />}
         {activeTab === "budget" && <BudgetTab state={state} updateState={updateState} />}
         {activeTab === "doctor" && <DoctorTab state={state} updateState={updateState} />}
         {activeTab === "meals" && <MealsTab />}
@@ -706,6 +709,166 @@ function BuyTab({ state, updateState }) {
           </div>
         ) : (
           <button onClick={() => setShowAddForm(true)} style={{ width: "100%", padding: "12px", background: "#fff", border: "1px dashed #ddd", borderRadius: 14, cursor: "pointer", fontSize: 13, color: "#aaa" }}>+ Add item</button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─── REGISTRY TAB ─────────────────────────────────────────────────────────────
+
+function RegistryTab({ state, updateState }) {
+  const gifts = state.registryGifts || [];
+  const [showForm, setShowForm] = useState(false);
+  const [editingId, setEditingId] = useState(null);
+  const [filterStatus, setFilterStatus] = useState("all"); // all | pending | arrived | thanked
+  const [sortBy, setSortBy] = useState("name"); // name | giver | price
+  const [form, setForm] = useState({ item: "", giver: "", price: "", arrived: false, thankYouSent: false, notes: "" });
+
+  const totalGifts = gifts.length;
+  const totalValue = gifts.reduce((s, g) => s + (parseFloat(g.price) || 0), 0);
+  const arrivedCount = gifts.filter(g => g.arrived).length;
+  const thankYouCount = gifts.filter(g => g.thankYouSent).length;
+  const needingThanks = gifts.filter(g => g.arrived && !g.thankYouSent).length;
+
+  function resetForm() { setForm({ item: "", giver: "", price: "", arrived: false, thankYouSent: false, notes: "" }); }
+
+  function saveGift() {
+    if (!form.item.trim()) return;
+    if (editingId) {
+      updateState({ registryGifts: gifts.map(g => g.id === editingId ? { ...g, ...form, price: parseFloat(form.price) || 0 } : g) });
+      setEditingId(null);
+    } else {
+      updateState({ registryGifts: [...gifts, { ...form, id: uid(), price: parseFloat(form.price) || 0 }] });
+    }
+    resetForm();
+    setShowForm(false);
+  }
+
+  function startEdit(gift) {
+    setForm({ item: gift.item, giver: gift.giver || "", price: gift.price ? String(gift.price) : "", arrived: gift.arrived || false, thankYouSent: gift.thankYouSent || false, notes: gift.notes || "" });
+    setEditingId(gift.id);
+    setShowForm(true);
+  }
+
+  function toggleField(id, field) {
+    updateState({ registryGifts: gifts.map(g => g.id === id ? { ...g, [field]: !g[field] } : g) });
+  }
+
+  function deleteGift(id) { updateState({ registryGifts: gifts.filter(g => g.id !== id) }); }
+
+  const filtered = gifts.filter(g => {
+    if (filterStatus === "pending") return !g.arrived;
+    if (filterStatus === "arrived") return g.arrived && !g.thankYouSent;
+    if (filterStatus === "thanked") return g.thankYouSent;
+    return true;
+  });
+
+  const sorted = [...filtered].sort((a, b) => {
+    if (sortBy === "giver") return (a.giver || "").localeCompare(b.giver || "");
+    if (sortBy === "price") return (b.price || 0) - (a.price || 0);
+    return a.item.localeCompare(b.item);
+  });
+
+  const btnStyle = (active) => ({ padding: "4px 10px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: active ? "none" : "1px solid #ddd", background: active ? "#1a1a1a" : "#fff", color: active ? "#fff" : "#555", whiteSpace: "nowrap" });
+
+  return (
+    <div>
+      {/* Summary */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8, marginBottom: 16 }}>
+        {[["Gifts", totalGifts], ["Arrived", arrivedCount], ["Thank yous sent", thankYouCount], ["Need thank you", needingThanks]].map(([l, v]) => (
+          <div key={l} style={{ background: needingThanks > 0 && l === "Need thank you" ? "#FEF2F2" : "#fff", border: `1px solid ${needingThanks > 0 && l === "Need thank you" ? "#FECACA" : "#EBEBEB"}`, borderRadius: 12, padding: 12, textAlign: "center" }}>
+            <div style={{ fontSize: 18, fontWeight: 700, color: needingThanks > 0 && l === "Need thank you" ? "#EF4444" : "#1a1a1a" }}>{v}</div>
+            <div style={{ fontSize: 11, color: "#aaa", marginTop: 2 }}>{l}</div>
+          </div>
+        ))}
+      </div>
+
+      {needingThanks > 0 && (
+        <div style={{ background: "#FFFBF0", border: "1px solid #FAEEDA", borderRadius: 10, padding: "10px 14px", marginBottom: 16, fontSize: 13, color: "#854F0B" }}>
+          💌 {needingThanks} gift{needingThanks > 1 ? "s have" : " has"} arrived without a thank you note yet — filter by "Needs thank you" to see them.
+        </div>
+      )}
+
+      {/* Filters + sort */}
+      <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <span style={{ fontSize: 12, color: "#aaa" }}>Filter:</span>
+        {[["all", "All"], ["pending", "Not arrived"], ["arrived", "Needs thank you"], ["thanked", "Thank you sent"]].map(([k, l]) => (
+          <button key={k} onClick={() => setFilterStatus(k)} style={btnStyle(filterStatus === k)}>{l}</button>
+        ))}
+      </div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+        <span style={{ fontSize: 12, color: "#aaa" }}>Sort:</span>
+        {[["name", "Item"], ["giver", "Giver"], ["price", "Price"]].map(([k, l]) => (
+          <button key={k} onClick={() => setSortBy(k)} style={btnStyle(sortBy === k)}>{l}</button>
+        ))}
+      </div>
+
+      {/* Gift list */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {sorted.length === 0 && !showForm && (
+          <div style={{ color: "#ccc", fontSize: 14, textAlign: "center", padding: "40px 0" }}>
+            {filterStatus === "all" ? "No gifts yet — add one below as they come in!" : "No gifts match this filter."}
+          </div>
+        )}
+        {sorted.map(gift => (
+          <div key={gift.id} style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 12, padding: "13px 16px" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 15, fontWeight: 600, color: "#1a1a1a", lineHeight: 1.4 }}>{gift.item}</div>
+                <div style={{ display: "flex", gap: 8, marginTop: 4, flexWrap: "wrap", alignItems: "center" }}>
+                  {gift.giver && <span style={{ fontSize: 13, color: "#555" }}>from {gift.giver}</span>}
+                  {gift.price > 0 && <span style={{ fontSize: 12, color: "#aaa" }}>${gift.price.toLocaleString()}</span>}
+                </div>
+                {gift.notes && <div style={{ fontSize: 12, color: "#888", marginTop: 4, fontStyle: "italic" }}>{gift.notes}</div>}
+              </div>
+              <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+                <button onClick={() => startEdit(gift)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 13, color: "#ccc" }}>✏️</button>
+                <button onClick={() => { if (window.confirm("Delete this gift?")) deleteGift(gift.id); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 13, color: "#ccc" }}>🗑</button>
+              </div>
+            </div>
+
+            {/* Status toggles */}
+            <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+              <button onClick={() => toggleField(gift.id, "arrived")} style={{ display: "flex", alignItems: "center", gap: 5, padding: "5px 10px", borderRadius: 8, fontSize: 12, cursor: "pointer", border: "none", background: gift.arrived ? "#E1F5EE" : "#F0EFEA", color: gift.arrived ? "#0F6E56" : "#888", fontWeight: gift.arrived ? 600 : 400 }}>
+                {gift.arrived ? "✓ Arrived" : "○ Not arrived"}
+              </button>
+              <button onClick={() => toggleField(gift.id, "thankYouSent")} style={{ display: "flex", alignItems: "center", gap: 5, padding: "5px 10px", borderRadius: 8, fontSize: 12, cursor: "pointer", border: "none", background: gift.thankYouSent ? "#E6F1FB" : gift.arrived ? "#FFFBF0" : "#F0EFEA", color: gift.thankYouSent ? "#185FA5" : gift.arrived ? "#854F0B" : "#bbb", fontWeight: gift.thankYouSent ? 600 : 400 }}>
+                {gift.thankYouSent ? "✓ Thank you sent" : gift.arrived ? "💌 Send thank you" : "Thank you"}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Add / Edit form */}
+      <div style={{ marginTop: 16 }}>
+        {showForm ? (
+          <div style={{ background: "#fff", border: "1px solid #EBEBEB", borderRadius: 14, padding: 16 }}>
+            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>{editingId ? "Edit gift" : "Add gift"}</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <input value={form.item} onChange={e => setForm(p => ({ ...p, item: e.target.value }))} placeholder="Item name *" style={{ padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
+              <div style={{ display: "flex", gap: 8 }}>
+                <input value={form.giver} onChange={e => setForm(p => ({ ...p, giver: e.target.value }))} placeholder="Who gave it?" style={{ flex: 1, padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
+                <input value={form.price} onChange={e => setForm(p => ({ ...p, price: e.target.value }))} placeholder="Value $" style={{ width: 100, padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
+              </div>
+              <input value={form.notes} onChange={e => setForm(p => ({ ...p, notes: e.target.value }))} placeholder="Notes (e.g. ordered online, need to exchange)" style={{ padding: "9px 12px", border: "1px solid #ddd", borderRadius: 8, fontSize: 14 }} />
+              <div style={{ display: "flex", gap: 16 }}>
+                <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#555", cursor: "pointer" }}>
+                  <input type="checkbox" checked={form.arrived} onChange={e => setForm(p => ({ ...p, arrived: e.target.checked }))} />Gift has arrived
+                </label>
+                <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#555", cursor: "pointer" }}>
+                  <input type="checkbox" checked={form.thankYouSent} onChange={e => setForm(p => ({ ...p, thankYouSent: e.target.checked }))} />Thank you sent
+                </label>
+              </div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <button onClick={saveGift} style={{ flex: 1, padding: "10px", background: "#1a1a1a", color: "#fff", border: "none", borderRadius: 8, fontSize: 14, cursor: "pointer", fontWeight: 600 }}>{editingId ? "Save changes" : "Add gift"}</button>
+                <button onClick={() => { setShowForm(false); setEditingId(null); resetForm(); }} style={{ padding: "10px 16px", background: "none", border: "1px solid #ddd", borderRadius: 8, fontSize: 14, cursor: "pointer", color: "#888" }}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <button onClick={() => setShowForm(true)} style={{ width: "100%", padding: "12px", background: "#fff", border: "1px dashed #ddd", borderRadius: 14, cursor: "pointer", fontSize: 13, color: "#aaa" }}>+ Add gift</button>
         )}
       </div>
     </div>
