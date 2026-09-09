@@ -307,6 +307,7 @@ function ChecklistTab({ state, updateState }) {
   const [filter, setFilter] = useState("all");
   const [labelFilter, setLabelFilter] = useState("all");
   const [sortMode, setSortMode] = useState("manual");
+  const [hideCompleted, setHideCompleted] = useState(false);
   const [openSections, setOpenSections] = useState(() => { const o = {}; SEED_TASKS.forEach(t => o[t.section] = true); return o; });
   const [activeTip, setActiveTip] = useState(null);
   const [editingId, setEditingId] = useState(null);
@@ -363,7 +364,7 @@ function ChecklistTab({ state, updateState }) {
           <button key={f.key} onClick={() => setFilter(f.key)} style={{ padding: "5px 12px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: filter === f.key ? "none" : "1px solid #ddd", background: filter === f.key ? "#1a1a1a" : "#fff", color: filter === f.key ? "#fff" : "#555" }}>{f.label}</button>
         ))}
       </div>
-      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+      <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap", alignItems: "center" }}>
         <span style={{ fontSize: 12, color: "#aaa" }}>Label:</span>
         <button onClick={() => setLabelFilter("all")} style={{ padding: "4px 10px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: labelFilter === "all" ? "none" : "1px solid #ddd", background: labelFilter === "all" ? "#1a1a1a" : "#fff", color: labelFilter === "all" ? "#fff" : "#555" }}>All</button>
         {LABELS.map(lb => <button key={lb.key} onClick={() => setLabelFilter(lb.key === labelFilter ? "all" : lb.key)} style={{ padding: "4px 10px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: "none", background: labelFilter === lb.key ? lb.color : lb.bg, color: labelFilter === lb.key ? "#fff" : lb.color, fontWeight: 600 }}>{lb.name}</button>)}
@@ -374,11 +375,23 @@ function ChecklistTab({ state, updateState }) {
           ))}
         </div>
       </div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+        <button
+          onClick={() => setHideCompleted(h => !h)}
+          style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 12px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: hideCompleted ? "none" : "1px solid #ddd", background: hideCompleted ? "#1a1a1a" : "#fff", color: hideCompleted ? "#fff" : "#555", fontWeight: hideCompleted ? 600 : 400 }}
+        >
+          <span style={{ width: 14, height: 14, borderRadius: 4, border: hideCompleted ? "none" : "2px solid #D0CFC8", background: hideCompleted ? "#fff" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            {hideCompleted && <span style={{ color: "#1a1a1a", fontSize: 9, fontWeight: 700 }}>✓</span>}
+          </span>
+          Hide completed
+        </button>
+      </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         {sections.map(section => {
           let items = section.items;
           if (filter !== "all") items = items.filter(i => i.timing === filter);
           if (labelFilter !== "all") items = items.filter(i => i.label === labelFilter);
+          if (hideCompleted) items = items.filter(i => !checked[i.id]);
           if (!items.length) return null;
           items = getSortedItems(items);
           const sectionDone = items.filter(i => checked[i.id]).length;
@@ -517,6 +530,7 @@ function BuyTab({ state, updateState }) {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [registryFilter, setRegistryFilter] = useState("all");
+  const [hideCompleted, setHideCompleted] = useState(false);
   const [sortBy, setSortBy] = useState("category"); // category | priority | price-asc | price-desc | status
   const [expandedId, setExpandedId] = useState(null);
   const [editingField, setEditingField] = useState(null); // { id, field }
@@ -557,6 +571,7 @@ function BuyTab({ state, updateState }) {
     if (statusFilter === "purchased" && !i.purchased) return false;
     if (registryFilter === "registry" && !i.fromRegistry) return false;
     if (registryFilter === "own" && i.fromRegistry) return false;
+    if (hideCompleted && i.purchased) return false;
     return true;
   });
 
@@ -597,9 +612,20 @@ function BuyTab({ state, updateState }) {
         <span style={{ fontSize: 12, color: "#aaa" }}>Sort:</span>
         {[["category", "Category"], ["priority", "Priority"], ["price-asc", "Price ↑"], ["price-desc", "Price ↓"], ["status", "Status"]].map(([k, l]) => <button key={k} onClick={() => setSortBy(k)} style={btnStyle(sortBy === k)}>{l}</button>)}
       </div>
-      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+      <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap", alignItems: "center" }}>
         <span style={{ fontSize: 12, color: "#aaa" }}>Category:</span>
         {categories.map(c => <button key={c} onClick={() => setCategoryFilter(c)} style={btnStyle(categoryFilter === c)}>{c === "all" ? "All" : c}</button>)}
+      </div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap", alignItems: "center" }}>
+        <button
+          onClick={() => setHideCompleted(h => !h)}
+          style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 12px", borderRadius: 20, fontSize: 12, cursor: "pointer", border: hideCompleted ? "none" : "1px solid #ddd", background: hideCompleted ? "#1a1a1a" : "#fff", color: hideCompleted ? "#fff" : "#555", fontWeight: hideCompleted ? 600 : 400 }}
+        >
+          <span style={{ width: 14, height: 14, borderRadius: 4, border: hideCompleted ? "none" : "2px solid #D0CFC8", background: hideCompleted ? "#fff" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            {hideCompleted && <span style={{ color: "#1a1a1a", fontSize: 9, fontWeight: 700 }}>✓</span>}
+          </span>
+          Hide purchased
+        </button>
       </div>
 
       {/* List */}
